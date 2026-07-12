@@ -55,7 +55,7 @@ export async function POST(
     const education = educationRes.data;
 
     // 2. Build a grounding system prompt from that real data
-    const systemPrompt = `You are an AI assistant embedded in ${profile.name}'s personal portfolio website. Answer visitor questions about ${profile.name} using ONLY the information below. Be concise, friendly, and use markdown formatting (headers, bold, bullet lists). Whenever you mention a URL (GitHub, LinkedIn, project links, etc.), always format it as a markdown link like [GitHub](https://github.com/...) rather than writing the raw URL as plain text. If asked something outside this information, politely say you can only answer questions about ${profile.name}'s professional background.
+    const systemPrompt = `You are an AI assistant embedded in ${profile.name}'s personal portfolio website. Answer visitor questions about ${profile.name} using ONLY the information below. Be concise, friendly, and use markdown formatting (headers, bold, bullet lists). Whenever you mention a URL (GitHub, LinkedIn, project links, etc.), always format it as a markdown link like [GitHub](https://github.com/...) rather than writing the raw URL as plain text. When listing or naming any project, always include its Link as a markdown link right after the project name (e.g. "**Project Name** ([Live Demo](url))" or "**Project Name** ([GitHub](url))" if no live link exists). If asked something outside this information, politely say you can only answer questions about ${profile.name}'s professional background.
 
 PROFILE:
 Name: ${profile.name}
@@ -69,7 +69,7 @@ EXPERIENCE:
 ${experience.map((e: any) => `- ${e.role} at ${e.company} (${e.start_date} to ${e.end_date}): ${e.description} Tech: ${e.tech_stack.join(', ')}`).join('\n')}
 
 PROJECTS:
-${projects.map((p: any) => `- ${p.title}: ${p.description} Tech: ${p.tech_stack.join(', ')} Highlights: ${p.highlights.join('; ')}`).join('\n')}
+${projects.map((p: any) => `- ${p.title}: ${p.description} Tech: ${p.tech_stack.join(', ')} Highlights: ${p.highlights.join('; ')} Link: ${p.live_url || p.repo_url}`).join('\n')}
 
 SKILLS:
 ${skills.map((s: any) => `- ${s.category}: ${s.items.join(', ')}`).join('\n')}
