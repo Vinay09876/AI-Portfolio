@@ -9,7 +9,7 @@ export const ProjectsPage: React.FC = () => {
     const { projects } = portfolio;
     const [showAll, setShowAll] = useState(false);
 
-    const visibleProjects = showAll ? projects : projects.slice(0, 3);
+    const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
     return (
         <div className="flex-1 overflow-y-auto bg-slate-50 dark:bg-zinc-900/40 p-4 sm:p-6 lg:p-8">
@@ -148,13 +148,13 @@ export const ProjectsPage: React.FC = () => {
                 </div>
 
                 {/* Show More / Show Less Toggle */}
-                {projects.length > 3 && (
+                {projects.length > 4 && (
                     <div className="flex justify-center pt-2">
                         <button
                             onClick={() => setShowAll(!showAll)}
                             className="px-5 py-2.5 rounded-xl border border-slate-200 dark:border-zinc-800 text-sm font-semibold text-slate-700 dark:text-zinc-300 bg-white dark:bg-zinc-950 hover:bg-slate-50 dark:hover:bg-zinc-900 transition-colors cursor-pointer"
                         >
-                            {showAll ? 'Show Less' : `Show ${projects.length - 3} More Projects`}
+                            {showAll ? 'Show Less' : `Show ${projects.length - 4} More Projects`}
                         </button>
                     </div>
                 )}
