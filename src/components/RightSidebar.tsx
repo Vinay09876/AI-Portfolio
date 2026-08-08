@@ -185,12 +185,12 @@ export const RightSidebar: React.FC = () => {
                             </div>
 
                             {/* Availability Indicator */}
-                            <div className="rounded-lg bg-teal-50/50 dark:bg-teal-950/10 border border-teal-100/20 dark:border-teal-900/20 p-3 text-center">
+                            {/* <div className="rounded-lg bg-teal-50/50 dark:bg-teal-950/10 border border-teal-100/20 dark:border-teal-900/20 p-3 text-center">
                                 <p className="text-[11px] font-medium text-teal-800 dark:text-teal-400 flex items-center justify-center gap-1.5">
                                     <span className="w-2 h-2 rounded-full bg-teal-500 animate-pulse shrink-0" />
                                     Available for new contracts
                                 </p>
-                            </div>
+                            </div> */}
                         </div>
                     ) : (
                         /* COLLAPSED/ICON RAIL VIEW */
