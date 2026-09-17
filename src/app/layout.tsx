@@ -1,10 +1,23 @@
 import type { Metadata } from 'next';
+import { Inter, Sora } from 'next/font/google';
 import './globals.css';
 import { AppProvider } from '../context/AppContext';
 import { Sidebar } from '../components/Sidebar';
 import { RightSidebar } from '../components/RightSidebar';
 import { SettingsModal } from '../components/SettingsModal';
 import { ToastHost } from '../components/ToastHost';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+});
+
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'AI Portfolio',
@@ -17,7 +30,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans">
+      <body className={`${inter.variable} ${sora.variable} font-sans`}>
         <AppProvider>
           <div className="flex h-screen w-screen overflow-hidden bg-white dark:bg-zinc-950 transition-colors duration-200">
             <Sidebar />
