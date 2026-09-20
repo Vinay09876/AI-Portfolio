@@ -96,7 +96,7 @@ export const ContactPage: React.FC = () => {
               <div className="space-y-1.5">
                 <h3 className="text-lg font-bold text-slate-800 dark:text-zinc-100">Message Sent Successfully!</h3>
                 <p className="text-xs text-slate-500 dark:text-zinc-400 max-w-sm mx-auto leading-relaxed">
-                  Thank you for reaching out. Your submission is received and mock-logged (will store in Supabase `contact_submissions` later).
+                  Thank you for reaching out. I've received your message and will get back to you soon.
                 </p>
               </div>
               <button

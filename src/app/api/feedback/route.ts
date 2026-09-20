@@ -4,7 +4,7 @@ import { supabase } from '@/lib/superbase';
 export async function POST(request: Request) {
     const { rating, thumbs, comment } = await request.json();
 
-    if (!rating || !thumbs || !comment) {
+    if (!rating && !thumbs) {
         return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
     }
 

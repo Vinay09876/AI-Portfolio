@@ -49,7 +49,7 @@ export const FeedbackPage: React.FC = () => {
             <div className="space-y-1.5">
               <h3 className="text-xl font-bold text-slate-800 dark:text-zinc-100">Feedback Received!</h3>
               <p className="text-xs text-slate-500 dark:text-zinc-400 max-w-sm mx-auto leading-relaxed">
-                Thank you so much! Your response helps me iterate and improve this portfolio experience. Submissions are saved locally and ready for Supabase mapping.
+                Thank you so much! Your response helps me iterate and improve this portfolio experience.
               </p>
             </div>
             <button
